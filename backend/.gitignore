@@ -1,0 +1,9 @@
+.idea/
+uploads/*
+node_modules/
+
+*.db
+*.log
+yarn*
+.DS_Store
+package-lock.json

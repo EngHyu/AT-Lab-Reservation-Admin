@@ -1,0 +1,30 @@
+{
+  "name": "at-lab-admin-backend",
+  "version": "0.0.1",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node app.js",
+    "serve": "pm2 start app.js --interpreter ./node_modules/babel-cli/bin/babel-node.js",
+    "delete": "pm2 delete 0"
+  },
+  "author": "enghyu",
+  "license": "MIT",
+  "dependencies": {
+    "better-sqlite3": "^6.0.1",
+    "csvtojson": "^2.0.10",
+    "express": "^4.17.1",
+    "multer": "^1.4.2"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "nodemon": "^2.0.2",
+    "pm2": "^4.2.3"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  }
+}

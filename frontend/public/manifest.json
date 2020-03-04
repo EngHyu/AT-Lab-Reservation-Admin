@@ -1,0 +1,8 @@
+{
+  "short_name": "AT-Lab-Admin",
+  "name": "AT Lab Reservation System Admin Frontend Page",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff"
+}

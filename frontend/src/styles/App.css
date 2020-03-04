@@ -1,0 +1,45 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+html {
+  font-size: 12px;
+}
+
+caption {
+  caption-side: top !important;
+}
+
+.row {
+  margin: 0 0 3rem -1rem;
+}
+
+.table-function, .title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.table-function > div {
+  height: 3rem;
+  display: flex;
+}
+
+.table-function > div > * {
+  height: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.search-label {
+  width: 110px;
+}
+
+.react-bs-table-csv-btn, .table-function > div > div > label {
+  width: 70px;
+  height: 2.5rem;
+}
+
+.table-function > div > *:last-child {
+  margin-right: 0;
+}
+
+#import_file {
+  display: none;
+}

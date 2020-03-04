@@ -1,0 +1,35 @@
+{
+  "exportCSV": "CSV 저장",
+  "importCSV": "CSV 입력",
+
+  "UserTable": {
+    "title": "사용자 랭킹",
+    "field": {
+      "id": "#",
+      "studentID": "학번",
+      "name": "이름",
+      "count": "예약 횟수"
+    }
+  },
+
+  "SeatTable": {
+    "title": "좌석 정보",
+    "field": {
+      "roomNum": "실습실",
+      "seatNum": "좌석 번호",
+      "pos": "위치",
+      "info": "기기 정보"
+    }
+  },
+
+  "LogTable": {
+    "title": "로그",
+    "field": {
+      "id": "#",
+      "created": "실행 시점",
+      "tableName": "테이블",
+      "action": "작업",
+      "log": "내용"
+    }
+  }
+}
