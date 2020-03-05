@@ -7,6 +7,7 @@ import axios from 'axios'
 export default class ImportCSV extends Component {
   static propTypes = {
     url: PropTypes.string.isRequired,
+    type: PropTypes.string.isRequired,
     importCSV: PropTypes.string.isRequired,
   }
 
@@ -30,18 +31,20 @@ export default class ImportCSV extends Component {
     })
 
     event.target.value = ""
+    window.location.reload();
   }
 
   // 버튼만 표시되고 input은 css로 인해 숨겨져 있습니다.
   render() {
     const {
+      type,
       importCSV,
     } = this.props
 
     return (
       <div>
-        <Button tag="label" htmlFor="import_file">{importCSV}</Button>
-        <input type="file" id="import_file" accept="text/csv" onChange={this.handleFileInput}/>
+        <Button tag="label" htmlFor={type}>{importCSV}</Button>
+        <input type="file" id={type} className="import_file" accept="text/csv" onChange={this.handleFileInput}/>
       </div>
     )
   }

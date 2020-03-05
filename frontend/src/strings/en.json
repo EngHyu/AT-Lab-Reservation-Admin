@@ -1,13 +1,47 @@
 {
-  "id": "#",
-  "log": "로그",
-  "name": "이름",
-  "created": "실행 시점",
-  "tableName": "테이블",
-  "action": "작업",
-  "count": "횟수",
-  "user": "사용자 랭킹",
-  "exportCSV": "CSV 저장",
-  "reservation": "예약 내역",
-  "passwordReset": "* 초기 비밀번호는 1111입니다."
+  "exportCSV": "Save CSV",
+  "importCSV": "Input CSV",
+  "deleteAll": {
+    "title": "Delete All Data",
+    "text": "Do you want to delete all data? data back-up is recommanded.",
+    "cancel": "cancel",
+    "submit": "delete"
+  },
+
+  "UserTable": {
+    "title": "User Ranking",
+    "field": {
+      "id": "#",
+      "studentID": "St.ID",
+      "name": "Name",
+      "count": "Count"
+    }
+  },
+
+  "SeatTable": {
+    "title": "Seat Info",
+    "field": {
+      "id": "#",
+      "roomNum": "Lab",
+      "seatNum": "Seat",
+      "type": "Type",
+      "reservable": "Reservable",
+      "left": "x",
+      "top": "y",
+      "isVertical": "isVertical",
+      "isDouble": "isDouble",
+      "info": "Info"
+    }
+  },
+
+  "LogTable": {
+    "title": "Log",
+    "field": {
+      "id": "#",
+      "created": "Created",
+      "tableName": "Table",
+      "action": "Action",
+      "log": "Log Text"
+    }
+  }
 }

@@ -11,6 +11,7 @@ import ToolkitProvider, { Search, CSVExport } from 'react-bootstrap-table2-toolk
 import axios from 'axios'
 import { Title } from './title'
 import ImportCSV from './importCSV'
+import DeleteAll from './deleteAll'
 
 // settings.json을 통해 테이블 별 필드 값과 간격을 불러옵니다.
 // width: 0은 전체(100%)에서 다른 width %를 뺀 나머지 값을 의미합니다.
@@ -40,7 +41,7 @@ function TableFunction({ paginationProps, tableProps, strings, type, url }) {
         </ExportCSVButton>
         {
           type !== 'LogTable' &&
-          <ImportCSV importCSV={strings.importCSV} url={url}/>
+          <ImportCSV importCSV={strings.importCSV} type={type} url={url}/>
         }
       </div>
     </div>
@@ -93,6 +94,10 @@ function contentTable({ paginationProps, paginationTableProps, strings, state, c
             type={type}
             url={url}
           />
+          {
+            type !== 'LogTable' &&
+            <DeleteAll strings={strings.deleteAll} type={type} url={url} />
+          }
         </Col>
       )
     }
@@ -146,6 +151,7 @@ class ListTable extends Component {
       columns: columnField.map(({ field, width }) => ({
         dataField: field,
         csvText: field,
+        csvExport: field !== 'id',
         text: strings[type].field[field],
         style: {
           width: width,
@@ -161,8 +167,6 @@ class ListTable extends Component {
     const {
       url,
     } = this.props
-    
-    console.log(url);
     
     axios.get(url)
     .then(res => {
@@ -219,7 +223,6 @@ class SeatTable extends ListTable {
     ...super.defaultProps,
     type: "SeatTable",
     url: `http://localhost:3000/seat`,
-    keyFieldIndex: 1,
   }
 }
 

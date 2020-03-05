@@ -20,17 +20,41 @@ export const columnFields = {
   
   "SeatTable": [
     {
+      "field": "id",
+      "width": "7%"
+    },
+    {
       "field": "roomNum",
-      "width": "10%"
+      "width": "12%"
     },
     {
       "field": "seatNum",
       "width": "12%"
     },
     {
-      "field": "pos",
+      "field": "type",
       "width": "12%"
     },
+    {
+      "field": "reservable",
+      "width": "12%"
+    },
+    // {
+    //   "field": "left",
+    //   "width": "7%"
+    // },
+    // {
+    //   "field": "top",
+    //   "width": "7%"
+    // },
+    // {
+    //   "field": "isVertical",
+    //   "width": "11%"
+    // },
+    // {
+    //   "field": "isDouble",
+    //   "width": "10%"
+    // },
     {
       "field": "info",
       "width": 0

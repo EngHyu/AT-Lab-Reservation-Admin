@@ -1,19 +1,16 @@
 import upload from './upload'
-import { getTableDB, setTableDB } from '../model'
+import { getRowsDB, setRowsDB, deleteRowsAllDB } from '../model'
 import multer from 'multer'
 
-export function getTable(req, res) {
-  const type = req.params.type
-  res.header("Access-Control-Allow-Origin", "http://localhost:5000")
+export function getRows(req, res) {
+  const { type } = req.params
   res.status(200).json(
-    getTableDB(type)
+    getRowsDB(type)
   )
 }
 
-export function setTable(req, res, next) {
+export function setRows(req, res, next) {
   const { type } = req.params
-  res.header("Access-Control-Allow-Origin", "http://localhost:5000")
-  
   upload(req, res, function(err) {
     if (err instanceof multer.MulterError) {
       return next(err)
@@ -21,9 +18,19 @@ export function setTable(req, res, next) {
       return next(err)
     }
 
-    if (!setTableDB(type, req.file))
+    if (!setRowsDB(type, req.file))
       return next(err)
 
-    return res.json({ success: type, file: req.file })
+    return res.json({
+      success: type,
+      file: req.file,
+    })
   })
+}
+
+export function deleteRowsAll(req, res) {
+  const { type } = req.params
+  res.status(200).json(
+    deleteRowsAllDB(type)
+  )
 }

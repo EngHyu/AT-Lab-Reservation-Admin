@@ -1,9 +1,10 @@
 import express, { Router } from 'express'
-import { getTable, setTable } from "../controller"
+import { getRows, setRows, deleteRowsAll } from "../controller"
 
 const router = Router()
 
-router.get('/:type', getTable)
-router.post('/:type', setTable)
+router.get('/:type', getRows)
+router.post('/:type', setRows)
+router.delete('/:type', deleteRowsAll)
 
 export default router

@@ -40,6 +40,46 @@ caption {
   margin-right: 0;
 }
 
-#import_file {
+.import_file {
   display: none;
+}
+
+.delete_all {
+  float: right;
+}
+
+.btn-block + .btn-block {
+  margin-top: 0 !important;
+  margin-left: 0.5rem;
+}
+
+.header {
+  width: 100%;
+  border-bottom: 1px solid gray;
+  font-size: 24px;
+  text-align: center;
+  padding: 5px;
+}
+
+.content {
+  width: 100%;
+  padding: 10px 15px;
+  line-height: 3;
+}
+
+.actions {
+  width: 100%;
+  padding: 10px 5px;
+  margin: auto;
+  text-align: center;
+  display: flex;
+}
+
+.close {
+  cursor: pointer;
+  position: absolute;
+  display: block;
+  right: 5px;
+  top: 0px;
+  font-size: 24px;
 }
