@@ -4,8 +4,11 @@ import router from './router'
 
 const app = express()
 const port = 3000
+const options = {
+  origin: 'http://localhost:5000',
+}
 
-app.use(cors())
+app.use(cors(options))
 app.use('/', router)
 
 app.listen(port, ()=>{
