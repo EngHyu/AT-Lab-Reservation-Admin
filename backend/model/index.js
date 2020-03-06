@@ -2,7 +2,7 @@ import csv from 'csvtojson'
 import { join } from 'path'
 import sqlite from 'better-sqlite3'
 
-const dbPath = '/Users/gimdongho/Desktop/eng/src/static/db.db'
+const dbPath = join(__dirname, '../../../AT-Lab-Reservation/resources/src/static/db.db')
 
 function getUserRowsQueryAndCallback(query) {
   return {
