@@ -3,19 +3,21 @@ import {  join } from 'path'
 import { existsSync } from 'fs'
 import sqlite from 'better-sqlite3'
 
-let dbPath, isDev
+let dbPath
 // dbPath in docker container
 if (existsSync('/mnt')) {
   dbPath = '/mnt/db.db'
 }
 else {
-  devPath = join(__dirname, '../../../at-lab-reservation/src')
+  const devPath = join(__dirname, '../../../at-lab-reservation/src')
 
   // dbPath in local, dev
   if (existsSync(devPath)) {
     dbPath = join(devPath, './static/db.db')
-  } else {
-    dbPath = join(__dirname, '../../../at-lab-reservation/resources/static/db.db')
+  }
+  // dbPath in dist
+  else {
+    dbPath = join(__dirname, '../../../at-lab-reservation/resources/src/static/db.db')
   }
 }
 
