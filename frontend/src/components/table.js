@@ -17,6 +17,8 @@ import DeleteAll from './deleteAll'
 // width: 0은 전체(100%)에서 다른 width %를 뺀 나머지 값을 의미합니다.
 import { columnFields } from 'settings'
 
+const baseURL = document.location.hostname
+
 // 한 페이지 당 목록 수, 페이지네이션 / 검색, CSV 저장을 담당합니다.
 // 좌우 정렬되어 표 위아래로 출력됩니다.
 function TableFunction({ paginationProps, tableProps, strings, type, url }) {
@@ -162,7 +164,7 @@ class ListTable extends Component {
     }
   }
 
-  // localhost:3000으로부터 데이터를 불러옵니다.
+  // 3000 port로부터 데이터를 불러옵니다.
   componentDidMount() {
     const {
       url,
@@ -213,7 +215,7 @@ class UserTable extends ListTable {
   static defaultProps = {
     ...super.defaultProps,
     type: "UserTable",
-    url: `http://localhost:3000/user`,
+    url: `http://${baseURL}:3000/user`,
     keyFieldIndex: 1,
   }
 }
@@ -222,7 +224,7 @@ class SeatTable extends ListTable {
   static defaultProps = {
     ...super.defaultProps,
     type: "SeatTable",
-    url: `http://localhost:3000/seat`,
+    url: `http://${baseURL}:3000/seat`,
   }
 }
 
@@ -230,7 +232,7 @@ class LogTable extends ListTable {
   static defaultProps = {
     ...super.defaultProps,
     type: "LogTable",
-    url: `http://localhost:3000/log`,
+    url: `http://${baseURL}:3000/log`,
   }
 }
 

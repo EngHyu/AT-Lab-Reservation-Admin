@@ -1,8 +1,17 @@
 import csv from 'csvtojson'
-import { join } from 'path'
+import {  join } from 'path'
+import { existsSync } from 'fs'
 import sqlite from 'better-sqlite3'
 
-const dbPath = join(__dirname, '../../../AT-Lab-Reservation/resources/src/static/db.db')
+let dbPath
+// dbPath in docker container
+if (exists('/mnt')) {
+  dbPath = '/mnt/db.db'
+}
+// dbPath in local
+else {
+  dbPath = join(__dirname, '../../../at-lab-reservation/src/static/db.db')
+}
 
 function getUserRowsQueryAndCallback(query) {
   return {
