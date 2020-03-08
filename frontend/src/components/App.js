@@ -1,7 +1,7 @@
-import 'styles/App.css';
+import '../styles/App.css';
 import React from 'react';
 import { UserTable, SeatTable, LogTable } from './table'
-import * as strings from 'strings'
+import * as strings from '../strings'
 
 function App() {
   const lang = 'ko'

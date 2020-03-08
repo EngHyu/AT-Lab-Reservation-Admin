@@ -11,9 +11,10 @@ backend/ (node.js + express)
 ```
 
 ## 개발 시 주의할 점
-1. 도커 컨테이너를 사용하지 않을 경우, `backend/model/index.js`에서 `dbPath`를 변경해주세요.
+1. 윈도우 배포를 위해서는 파이썬, Visual Studio가 필요합니다.
+2. 도커 컨테이너를 사용하지 않을 경우, `backend/model/index.js`에서 `dbPath`를 변경해주세요.
 
-## 배포 시 도커 파일 사용법
+## 도커 파일 사용법
 1. [Docker Desktop](https://hub.docker.com/search?q=&type=edition&offering=community&sort=updated_at&order=desc)을 다운로드 받습니다.
 2. 현재 디렉토리에서 다음 명령어를 실행하여 도커 이미지를 만듭니다.
 ```
@@ -23,9 +24,11 @@ docker build . --tag at-lab
 ```
 docker run -it -p 3000:3000 -p 5000:5000 -v {사용자_앱_static_폴더_경로}:/mnt --name admin at-lab
 ```
-
-## 배포 후 도커 컨테이너 사용법
-1. 컴퓨터가 다시 시작할 때마다 아래 명령어가 실행되게 해주세요.
+4. 다음 명령어를 사용하여 도커 컨테이너를 실행하면, backend와 frontend가 모두 실행됩니다.
 ```
 docker start admin
+```
+5. 코드 수정을 위해서는 다음 명령어를 사용하여 도커 컨테이너에 진입하여 주십시오.
+```
+docker exec -it admin sh
 ```

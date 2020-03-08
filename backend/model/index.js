@@ -3,14 +3,20 @@ import {  join } from 'path'
 import { existsSync } from 'fs'
 import sqlite from 'better-sqlite3'
 
-let dbPath
+let dbPath, isDev
 // dbPath in docker container
-if (exists('/mnt')) {
+if (existsSync('/mnt')) {
   dbPath = '/mnt/db.db'
 }
-// dbPath in local
 else {
-  dbPath = join(__dirname, '../../../at-lab-reservation/src/static/db.db')
+  devPath = join(__dirname, '../../../at-lab-reservation/src')
+
+  // dbPath in local, dev
+  if (existsSync(devPath)) {
+    dbPath = join(devPath, './static/db.db')
+  } else {
+    dbPath = join(__dirname, '../../../at-lab-reservation/resources/static/db.db')
+  }
 }
 
 function getUserRowsQueryAndCallback(query) {

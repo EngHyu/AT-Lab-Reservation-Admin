@@ -15,7 +15,7 @@ import DeleteAll from './deleteAll'
 
 // settings.json을 통해 테이블 별 필드 값과 간격을 불러옵니다.
 // width: 0은 전체(100%)에서 다른 width %를 뺀 나머지 값을 의미합니다.
-import { columnFields } from 'settings'
+import { columnFields } from '../settings'
 
 const baseURL = document.location.hostname
 
