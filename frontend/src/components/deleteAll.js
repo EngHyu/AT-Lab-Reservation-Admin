@@ -22,13 +22,13 @@ export default class DeleteAll extends Component {
 
     axios.delete(url)
     .then(res => {
-      console.log(res.data)
+      if (res.changes !== 0)
+        window.location.reload()
     }).catch(err => {
       console.log(err)
     })
 
     close()
-    window.location.reload();
   }
 
   render() {

@@ -124,6 +124,9 @@ function setSeatRows(filePath) {
           WHERE roomNum=? and seatNum=? and type=?;
         `).get([ roomNum, seatNum, type ])
 
+        if (old === undefined)
+          return
+
         if (old.info !== info) {
           db.prepare(`
             UPDATE seat

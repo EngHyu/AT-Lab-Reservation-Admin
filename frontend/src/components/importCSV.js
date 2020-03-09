@@ -26,12 +26,12 @@ export default class ImportCSV extends Component {
     axios.post(url, formData)
     .then(res => {
       console.log(res.data)
+      window.location.reload();
     }).catch(err => {
       console.log(err)
     })
 
     event.target.value = ""
-    window.location.reload();
   }
 
   // 버튼만 표시되고 input은 css로 인해 숨겨져 있습니다.

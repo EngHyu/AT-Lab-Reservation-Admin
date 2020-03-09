@@ -13,6 +13,7 @@ backend/ (node.js + express)
 ## 개발 시 주의할 점
 1. 윈도우 배포를 위해서는 파이썬, Visual Studio가 필요합니다.
 2. 도커 컨테이너를 사용하지 않을 경우, `backend/model/index.js`에서 `dbPath`를 변경해주세요.
+3. backend/ 하단에 uploads 폴더를 만들어주세요!!
 
 ## 도커 파일 사용법
 1. [Docker Desktop](https://hub.docker.com/search?q=&type=edition&offering=community&sort=updated_at&order=desc)을 다운로드 받습니다.

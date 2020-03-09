@@ -1,8 +1,8 @@
 .idea/
-uploads/*
 node_modules/
 
 *.db
+*.csv
 *.log
 yarn*
 .DS_Store
